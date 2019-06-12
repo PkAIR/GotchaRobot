@@ -5,7 +5,6 @@ Library     Selenium2Library
 Open report page
     Log     As I user I can open the report page
     open browser                            ${URL}   ${Browser}
-    #wait until page contains    Google
     click element                           css:div.f-left.checkError > b > label
     click button                            css:div.f-right.u-form > button
 
@@ -13,7 +12,9 @@ Set region and department as
     [Arguments]     ${region}   ${department}
     Log     Selecting region and department
     select from list by label               xpath://select[@name="region_code"]   ${region}
-    #select from list by label       css:#subunit_check   ${department}
+    wait until element is visible           xpath://span[@title='Выберите']/following-sibling::span
+    click element                           xpath://span[@title='Выберите']/following-sibling::span
+    select from list by label               css:#subunit_check   ${department}
 
 Set personal information as
     [Arguments]  ${name}    ${surname}  ${email}
