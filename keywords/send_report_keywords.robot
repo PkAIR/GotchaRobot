@@ -5,7 +5,6 @@ Library     Selenium2Library
 Open report page
     Log     As I user I can open the report page
     open browser                            ${URL}   ${Browser}
-    #wait until page contains    Google
     click element                           css:div.f-left.checkError > b > label
     click button                            css:div.f-right.u-form > button
 
