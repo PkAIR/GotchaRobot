@@ -37,7 +37,7 @@ Set reason for accident
 Upload file with name
     [Arguments]  ${fileNameToUpload}
     Log     Uploading file
-    choose file                             css:input[type=file]:first-child    ${CURDIR}//${fileNameToUpload}
+    choose file                             css:input[type=file]:first-child    ${EXECDIR}//${fileNameToUpload}
     wait until element is visible           css:.half_link  90 seconds
 
 Waiting for the captcha for
