@@ -1,6 +1,7 @@
 *** Settings ***
 Documentation  Send report test
 Resource    ../keywords/send_report_keywords.robot
+Library     HttpLibrary.HTTP
 
 *** Variables ***
 ${Browser}      opera
