@@ -1,5 +1,6 @@
 *** Settings ***
-Library     Selenium2Library
+Documentation   Keywords for site manipulation
+Library         Selenium2Library
 
 *** Keywords ***
 Open report page
