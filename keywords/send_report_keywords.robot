@@ -3,7 +3,8 @@ Documentation   Keywords for site manipulation
 Library         Selenium2Library
 
 *** Keywords ***
-Open report page
+Open report page in
+    [Arguments]  ${Browser}
     Log     As I user I can open the report page
     open browser                            ${URL}   ${Browser}
     click element                           css:div.f-left.checkError > b > label
@@ -18,11 +19,11 @@ Set region and department as
     select from list by label               css:#subunit_check   ${department}
 
 Set personal information as
-    [Arguments]  ${name}    ${surname}  ${email}
+    [Arguments]  ${surname}    ${name}  ${email}
     Log     Setting personal information
-    input text                              css:#surname_check  ${surname}
+    input text                              css:#surname_check      ${surname}
     input text                              css:#firstname_check    ${name}
-    input text                              css:#email_check    ${email}
+    input text                              css:#email_check        ${email}
 
 Set region for accident as
     [Arguments]  ${regionForAcc}
@@ -34,12 +35,12 @@ Set region for accident as
 Set reason for accident
     [Arguments]  ${reason}
     Log     Setting reason for the report
-    input text                              css:.textarea                   ${reason}
+    input text                              css:.textarea       ${reason}
 
 Upload file with name
-    [Arguments]  ${fileNameToUpload}
+    [Arguments]  ${pathToEvidenceFile}
     Log     Uploading file
-    choose file                             css:input[type=file]:first-child    ${EXECDIR}//${fileNameToUpload}
+    choose file                             css:input[type=file]:first-child    ${pathToEvidenceFile}
     wait until element is visible           css:.half_link  90 seconds
 
 Waiting for the captcha for
