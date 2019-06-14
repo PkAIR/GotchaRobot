@@ -5,7 +5,7 @@ Library             OperatingSystem
 *** Keywords ***
 Get data from file
     [Arguments]  ${filePath}
-    ${jsonfile}=        Get File        ${filePath}
+    ${jsonFile}=        Get File        ${filePath}
     ${sourceData}=      Evaluate        json.loads("""${jsonfile}""")    json
 
     [return]  ${sourceData}
